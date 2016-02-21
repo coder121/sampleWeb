@@ -2,18 +2,37 @@
     <div class="row row-content">
         <h1>Cisco</h1>
         <div ng-init="accordion">
-            <h3 class="accordion" ng-class="{active:accordion==2}">
-                <a href ng-click="accordion = 2">Internships</a>
+            <h3 class="accordion" ng-class="{active:accordion==1}">
+                <a href ng-click="accordion = 1">Internships</a>
 	       </h3>
+             <ul class="accordion-content" ng-show="accordion==1">
+                <h4>List of internship positions</h4>
+                   <li class="media" data-ng-repeat="job in jobs">
+				      <div class="media-body" ng-if="job.title.toLowerCase().indexOf('intern')>1">
+				         <a href=http://{{job.url}} target="_blank"> <h4 class="media-heading" >{{job.title}} <span class="label label-danger label-xs">cisco </span></h4></a>  
+    				</div>
+                </li>
+               </ul>
+             <h3 class="accordion" ng-class="{active:accordion==2}">
+                <a href ng-click="accordion = 2">Full Time/New-Grad</a>
+	       </h3>
+             <ul class="accordion-content" ng-show="accordion==2">
+                <h4>List of Full Time Positions</h4>
+                   <li class="media" data-ng-repeat="job in jobs">
+				      <div class="media-body" ng-if="job.title.toLowerCase().indexOf('co-op')>1||job.title.toLowerCase().indexOf('full time')>1
+                                                     ||job.title.toLowerCase().indexOf('graduate')>1">
+				         <a href=http://{{job.url}} target="_blank"> <h4 class="media-heading" >{{job.title}} <span class="label label-danger label-xs">cisco </span></h4></a>  
+    				</div>
+                </li>
+               </ul>
             <h3 class="accordion" ng-class="{active:accordion==3}">
                 <a href ng-click="accordion = 3">All</a>
 	       </h3>
             <ul class="accordion-content" ng-show="accordion==3">
-                <h4>Implement the Corporate Leaders List here</h4>
-                   <li class="media" data-ng-repeat="job in jobs " >
+                <h4>List of full time and internship positions</h4>
+                   <li class="media" data-ng-repeat="job in jobs">
 				      <div class="media-body">
-				        <h4 class="media-heading">{{job.title}} <span class="label label-danger label-xs">cisco </span></h4>
-                          <a href=http://{{job.url}} target="_blank">Click here</a>  
+				         <a href=http://{{job.url}} target="_blank"> <h4 class="media-heading" >{{job.title}} <span class="label label-danger label-xs">cisco </span></h4></a>  
     				</div>
                 </li>
                </ul>
