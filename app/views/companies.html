@@ -1,0 +1,31 @@
+<div class="container" ng-controller="JobController">
+    <div class="row row-content">
+        <h1>Cisco</h1>
+        <div ng-init="accordion">
+            <h3 class="accordion" ng-class="{active:accordion==2}">
+                <a href ng-click="accordion = 2">Internships</a>
+	       </h3>
+            <h3 class="accordion" ng-class="{active:accordion==3}">
+                <a href ng-click="accordion = 3">All</a>
+	       </h3>
+            <ul class="accordion-content" ng-show="accordion==3">
+                <h4>Implement the Corporate Leaders List here</h4>
+                   <li class="media" data-ng-repeat="job in jobs " >
+				      <div class="media-body">
+				        <h4 class="media-heading">{{job.title}} <span class="label label-danger label-xs">cisco </span></h4>
+                          <a href=http://{{job.url}} target="_blank">Click here</a>  
+    				</div>
+                </li>
+               </ul>
+        </div>
+                  <div ng-if="!showJob">
+                    <h3>{{message}}</h3>
+                </div>
+               </div>
+             <div class="col-xs-12 col-sm-3">
+                <p style="padding:20px;"></p>
+            </div>
+       </div>
+
+
+  </div>

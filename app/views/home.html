@@ -1,0 +1,60 @@
+<div class="container" ng-controller="IndexController">
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3 col-sm-push-9">
+                <p style="padding:20px;"></p>
+                <h2>INTERNSHIPS</h2>
+                
+                  
+            </div>
+             <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+                <div ng-if="!showJob">
+                    <h3>{{message}}</h3>
+                </div>
+                <div class="media">
+<!--				<h4>Implement the Featured Dish Here</h4>-->
+               
+                    <div class="media-left media-middle">
+                        <a href="#">
+                            <img class="media-object img-thumbnail" ng-src="images/cisco.png" alt="Cisco" height="100" width="90">
+                        </a>
+                    </div>
+
+                    <div class="media-body">
+                        <h4 class="media-heading">{{intern.title}}
+                            <span class="label label-danger">cisco</span></h4>
+                            
+                            <a href=http://{{intern.url}} target="_blank">Click here</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3">
+                <p style="padding:20px;"></p>
+                <h2 align=center>NEW GRAD</h2>
+            </div>
+             
+            <div class="col-xs-12 col-sm-9">
+                <div ng-if="!showJob">
+                    <h3>{{message}}</h3>
+                </div>
+                  <div class="media">           
+                   <div class="col-sm-10">               
+                       <h4 class="media-heading">{{job.title}} <span class="label label-danger label-xs">cisco </span></h4>
+                          <a href=http://{{job.url}} target="_blank">Click here</a>      
+                                  
+                   </div>           
+                     <div class="media-right">                  
+                       <a href="#">
+                            <img class="media-object img-thumbnail" ng-src="images/cisco.png" alt="Cisco"  height="100" width="90">
+                           
+                        </a>         
+                   </div>       
+               </div>   
+            </div>
+        </div>
+
+      
+    </div>
