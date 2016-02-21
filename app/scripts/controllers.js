@@ -111,36 +111,42 @@ angular.module('confusionApp')
         }])
 
   
-         .controller('AboutController', ['$scope','$stateParams', 'corporateFactory', function($scope,$stateParams,corporateFactory) {
-            
-            
-
-             $scope.showLeaders= true;
-             $scope.message = "Loading ...";
-             corporateFactory.getLeaders().query(
-                 function(response) {
-                     $scope.leaders= response;
-                     $scope.showLeaders= true;
-                 },
-                 function(response) {
-                     $scope.message = "Error: "+response.status + " " + response.statusText;
-                 });
-         
-         }])
 
 .controller('JobController', ['$scope', '$stateParams', 'jobFactory', function($scope, $stateParams, jobFactory) {
  
-
+   
     jobFactory.getJobs().query(
                  function(response) {
-                     $scope.jobs= response;
+                      $scope.jobs= response;
                      console.log(jobs);
                      $scope.showJob= true;
+                     
                  },
                  function(response) {
                      $scope.message = "Error: "+response.status + " " + response.statusText;
                  });
+    
+//      jobFactory.getJobs().query(
+//                 function(response) {
+//                     if(typeof response !== "undefined"){
+//                        
+//                     if(response["title"].toLowerCase().indexOf("intern")>1){
+//                         console.log(response)
+//                         $scope.interns= response;
+//                     console.log(interns);
+//                     $scope.showJob= true;
+//                     }
+//                     }
+//                 },
+//                 function(response) {
+//                     $scope.message = "Error: "+response.status + " " + response.statusText;
+//                 });
+    
 }])
+
+
+
+
 
         .controller('IndexController', ['$scope', '$stateParams', 'menuFactory','corporateFactory' , function($scope, $stateParams, menuFactory, corporateFactory) {
              $scope.showDish = false;
